@@ -1,0 +1,106 @@
+body {
+  background: #262626;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 210mm;
+  height: 297mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Champagne & Limousines";
+  color: #595959;
+  font-size: 11pt; }
+
+h3, h4 {
+  margin: 0;
+  color: #730217;
+  margin-bottom: 4pt;
+  display: inline-block;
+  text-transform: uppercase;
+  border-bottom: 1pt solid #BF0426; }
+
+h3 {
+  font-size: 14pt; }
+
+h4 {
+  font-size: 11pt; }
+
+h5, main .content div table tr > td:nth-child(1), h6 {
+  font-size: 11pt;
+  color: #262626;
+  font-weight: bold;
+  margin: 0; }
+
+p {
+  margin: 0;
+  margin-bottom: 4pt; }
+
+header {
+  color: #F2F2F2;
+  height: 35mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  header h1, header h2 {
+    text-align: center;
+    margin: 0; }
+  header h1 {
+    font-family: "Century Gothic";
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 32pt; }
+  header h2 {
+    text-transform: uppercase;
+    letter-spacing: 5pt;
+    font-weight: bold;
+    font-size: 14pt; }
+
+main {
+  flex: 1;
+  padding: 10mm;
+  display: flex;
+  background: #F2F2F2; }
+  main .sideboard {
+    flex: 1;
+    text-align: right;
+    padding: 5mm 0;
+    display: flex;
+    flex-direction: column; }
+    main .sideboard div {
+      font-size: 13pt;
+      flex: 1; }
+      main .sideboard div.bottom {
+        font-size: 11pt;
+        margin-top: 5mm;
+        flex: 0; }
+  main .dotted-line {
+    height: 100%;
+    width: 2pt;
+    margin: 0 10mm 0 7.5mm; }
+  main .content {
+    width: 135mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    main .content p {
+      font-size: 10pt; }
+    main .content div > p, main .content div > h5 {
+      margin-left: 5mm; }
+    main .content div table {
+      width: 100%; }
+      main .content div table tr > td:nth-child(1) {
+        text-align: right;
+        padding-right: 5mm;
+        vertical-align: top; }
+      main .content div table tr > td:nth-child(2) {
+        width: 100mm; }
+
+footer {
+  height: 10mm; }
+
+/*# sourceMappingURL=style.css.map */

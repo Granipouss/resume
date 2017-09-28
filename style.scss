@@ -1,0 +1,162 @@
+// Colors
+$white: #F2F2F2;
+$dark-red: #730217;
+$light-red: #BF0426;
+$dark-gray: #262626;
+$light-gray: #595959;
+
+@mixin vAlign {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body {
+  background: $dark-gray;
+
+  position: absolute;
+  top: 0; bottom: 0;
+  right: 0; left: 0;
+  margin: 0; padding: 0;
+
+  width: 210mm;
+  height: 297mm;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  font-family: "Champagne & Limousines";
+  color: $light-gray;
+  font-size: 11pt;
+}
+
+h3, h4 {
+  margin: 0;
+  color: $dark-red;
+  margin-bottom: 4pt;
+  display: inline-block;
+  text-transform: uppercase;
+  border-bottom: 1pt solid $light-red;
+}
+
+h3 { font-size: 14pt; }
+h4 { font-size: 11pt; }
+
+h5, h6 {
+  font-size: 11pt;
+  color: $dark-gray;
+  font-weight: bold;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 4pt;
+}
+
+// =============================================================================
+// ~ HEADER
+// =============================================================================
+
+header {
+  color: $white;
+  height: 35mm;
+
+  @include vAlign;
+
+  h1, h2 {
+    text-align: center;
+    margin: 0;
+  }
+
+  h1 {
+    font-family: "Century Gothic";
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 32pt;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 5pt;
+    font-weight: bold;
+    font-size: 14pt;
+  }
+}
+
+// =============================================================================
+// ~ MAIN
+// =============================================================================
+
+main {
+  flex: 1;
+  padding: 10mm;
+  display: flex;
+  background: $white;
+
+  .sideboard {
+    flex: 1;
+    text-align: right;
+    padding: 5mm 0;
+    display: flex;
+    flex-direction: column;
+
+
+    div {
+      font-size: 13pt;
+      flex: 1;
+      &.bottom {
+        font-size: 11pt;
+        margin-top: 5mm;
+        flex: 0;
+      }
+    }
+  }
+
+  .dotted-line {
+    height: 100%;
+    width: 2pt;
+    // background-size: 2pt;
+    // background-image: url(dotted-line.svg);
+
+    // border-width: 4pt;
+    // border-left-style: solid;
+    // border-image: url('dotted-border.svg') 33% round;
+    margin: 0 10mm 0 7.5mm;
+  }
+
+  .content {
+    width: 135mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p { font-size: 10pt; }
+
+    div {
+      & > p, & > h5 { margin-left: 5mm; }
+
+      table {
+        width: 100%;
+        tr > td:nth-child(1) {
+          text-align: right;
+          padding-right: 5mm;
+          vertical-align: top;
+          @extend h5;
+        }
+        tr > td:nth-child(2) {
+          width: 100mm;
+        }
+      }
+    }
+  }
+}
+
+// =============================================================================
+// ~ FOOTER
+// =============================================================================
+
+footer {
+  height: 10mm;
+}
