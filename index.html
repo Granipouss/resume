@@ -7,6 +7,27 @@
     <script src="https://unpkg.com/vue"></script>
   </head>
 
+  <style>
+    body {
+      background: grey;
+      position: absolute;
+      top: 0; bottom: 0;
+      right: 0; left: 0;
+      margin: 0; padding: 0;
+    }
+
+    #resume {
+      width: 210mm;
+      height: 297mm;
+      margin: 5mm auto;
+      box-shadow: 0 3mm 3mm rgba(0,0,0,0.5);
+    }
+  </style>
+
+  <style media="print">
+    #resume { margin: 0; }
+  </style>
+
   <body>
     <div id="resume">
       <header>
