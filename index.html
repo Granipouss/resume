@@ -38,15 +38,57 @@
 
   <body>
     <div id="resume">
-      <h1>{{ title }}</h1>
-      <h2>{{ subtitle }}</h2>
+      <header>
+        <h1>{{ title }}</h1>
+        <h2>{{ subtitle }}</h2>
+      </header>
 
-      <p class="description">{{ description }}</p>
+      <main>
+        <div class="sideboard">
+          <div>
+            <h4>{{ side.info.title }}</h4>
+            <template v-for="item in side.info.list">
+              <h6>{{ item.label }}</h6>
+              <p v-html="item.text"></p>
+            </template>
+          </div>
 
-      <div v-for="part in parts">
-        <h4>{{ part.title }}</h4>
-        <p v-html="part.content"></p>
-      </div>
+          <div v-for="skillset in side.skills" class="bottom">
+            <h4>{{ skillset.title }}</h4>
+            <template v-for="skill in skillset.list">
+              <h6>{{ skill.label }}</h6>
+              <p v-html="skill.text"></p>
+            </template>
+          </div>
+        </div>
+
+        <div class="dotted-line">
+          <img v-for="i in 300" src="dot.svg">
+        </div>
+
+        <div class="content">
+          <div v-for="part in main">
+            <h3>{{ part.title }}</h3>
+            <table v-if="part.isTable">
+              <tr v-for="item in part.list">
+                <td>{{ item.date }}</td>
+                <td>
+                  <h5>{{ item.label }}</h5>
+                  <p v-html="item.text"></p>
+                </td>
+              </tr>
+            </table>
+            <template v-else>
+              <template v-for="item in part.list">
+                <h5>{{ item.label }}</h5>
+                <p v-html="item.text"></p>
+              </template>
+            </template>
+          </div>
+        </div>
+      </main>
+
+      <footer></footer>
     </div>
   </body>
 

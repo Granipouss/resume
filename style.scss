@@ -1,66 +1,150 @@
 // ===============================
-//  ~ Fonts
-// ===============================
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
-
-// ===============================
 //  ~ Colors
 // ===============================
-$indigo: #3F51B5;
-$black: #000000;
+$white: #F2F2F2;
+$dark-red: #730217;
+$light-red: #BF0426;
+$dark-gray: #262626;
+$light-gray: #595959;
 
 // ===============================
 //  ~ Typography
 // ===============================
 .text {
-  font-family: 'Noto Serif', serif;
-  font-weight: normal;
-  font-size: 10pt;
-  color: $black;
+  font-family: "Champagne & Limousines";
+  color: $light-gray;
+  font-size: 11pt;
+  margin: 0;
 }
 
-.title {
+.title, h3, h4 {
   @extend .text;
+  color: $dark-red;
+  margin-bottom: 4pt;
+  display: inline-block;
+  text-transform: uppercase;
+  border-bottom: 1pt solid $light-red;
+}
+
+h3 { font-size: 14pt; }
+
+.subtitle, h5, h6 {
+  @extend .text;
+  color: $dark-gray;
   font-weight: bold;
-  color: $indigo;
+}
+
+p {
+  @extend .text;
+  margin-bottom: 4pt;
 }
 
 // ===============================
 //  ~ Layout
 // ===============================
 #resume {
-  padding: 15mm;
+  background: $dark-gray;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   @extend .text;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @extend .title;
-  margin: 0;
+// = HEADER ===
+header {
+  flex-shrink: 0;
+
+  color: $white;
+  height: 35mm;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1, h2 {
+    text-align: center;
+    margin: 0;
+  }
+
+  h1 {
+    font-family: "Century Gothic";
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 32pt;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 5pt;
+    font-weight: bold;
+    font-size: 14pt;
+  }
 }
 
-h1, h2 {
-  text-align: center;
+// = MAIN ===
+main {
+  flex-grow: 1;
+  padding: 10mm;
+  display: flex;
+  background: $white;
+
+  .sideboard {
+    flex: 1;
+    text-align: right;
+    padding: 5mm 0;
+    display: flex;
+    flex-direction: column;
+
+    div {
+      font-size: 13pt;
+      flex: 1;
+      &.bottom {
+        font-size: 11pt;
+        margin-top: 5mm;
+        flex: 0;
+      }
+    }
+  }
+
+  .dotted-line {
+    // height: 100%;
+    width: 2pt;
+    margin: 0 10mm 0 7.5mm;
+    line-height: 0;
+    overflow: hidden;
+  }
+
+  .content {
+    width: 135mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p { font-size: 10pt; }
+
+    div {
+      & > p, & > h5 { margin-left: 5mm; }
+
+      table {
+        width: 100%;
+        tr > td:nth-child(1) {
+          text-align: right;
+          padding-right: 5mm;
+          vertical-align: top;
+          @extend h5;
+        }
+        tr > td:nth-child(2) {
+          width: 100mm;
+        }
+      }
+    }
+  }
 }
 
-h1 { font-size: 32pt; }
-h2 { font-size: 20pt; }
-h3 { font-size: 16pt; }
-h4 { font-size: 14pt; }
-h5 { font-size: 11pt; }
-h6 { font-size:  9pt; }
-
-h4 {
-  border-bottom: 1pt solid;
-}
-
-p {
-  @extend .text;
-  margin-top: 0;
-}
-
-.description {
-  font-style: italic;
-  text-align: center;
-  margin: 10pt 32pt;
-  opacity: 0.95;
+// = FOOTER ===
+footer {
+  flex-shrink: 0;
+  height: 10mm;
 }

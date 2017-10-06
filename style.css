@@ -1,51 +1,94 @@
-@import url("https://fonts.googleapis.com/css?family=Noto+Serif");
-.text, .title, h1, h2, h3, h4, h5, h6, #resume, p {
-  font-family: 'Noto Serif', serif;
-  font-weight: normal;
-  font-size: 10pt;
-  color: #000000; }
-
-.title, h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
-  color: #3F51B5; }
-
-#resume {
-  padding: 15mm; }
-
-h1, h2, h3, h4, h5, h6 {
+.text, .title, h3, h4, .subtitle, h5, main .content div table tr > td:nth-child(1), h6, p, #resume {
+  font-family: "Champagne & Limousines";
+  color: #595959;
+  font-size: 11pt;
   margin: 0; }
 
-h1, h2 {
-  text-align: center; }
-
-h1 {
-  font-size: 32pt; }
-
-h2 {
-  font-size: 20pt; }
+.title, h3, h4 {
+  color: #730217;
+  margin-bottom: 4pt;
+  display: inline-block;
+  text-transform: uppercase;
+  border-bottom: 1pt solid #BF0426; }
 
 h3 {
-  font-size: 16pt; }
-
-h4 {
   font-size: 14pt; }
 
-h5 {
-  font-size: 11pt; }
-
-h6 {
-  font-size: 9pt; }
-
-h4 {
-  border-bottom: 1pt solid; }
+.subtitle, h5, main .content div table tr > td:nth-child(1), h6 {
+  color: #262626;
+  font-weight: bold; }
 
 p {
-  margin-top: 0; }
+  margin-bottom: 4pt; }
 
-.description {
-  font-style: italic;
-  text-align: center;
-  margin: 10pt 32pt;
-  opacity: 0.95; }
+#resume {
+  background: #262626;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
-/*# sourceMappingURL=style.css.map */
+header {
+  flex-shrink: 0;
+  color: #F2F2F2;
+  height: 35mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  header h1, header h2 {
+    text-align: center;
+    margin: 0; }
+  header h1 {
+    font-family: "Century Gothic";
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 32pt; }
+  header h2 {
+    text-transform: uppercase;
+    letter-spacing: 5pt;
+    font-weight: bold;
+    font-size: 14pt; }
+
+main {
+  flex-grow: 1;
+  padding: 10mm;
+  display: flex;
+  background: #F2F2F2; }
+  main .sideboard {
+    flex: 1;
+    text-align: right;
+    padding: 5mm 0;
+    display: flex;
+    flex-direction: column; }
+    main .sideboard div {
+      font-size: 13pt;
+      flex: 1; }
+      main .sideboard div.bottom {
+        font-size: 11pt;
+        margin-top: 5mm;
+        flex: 0; }
+  main .dotted-line {
+    width: 2pt;
+    margin: 0 10mm 0 7.5mm;
+    line-height: 0;
+    overflow: hidden; }
+  main .content {
+    width: 135mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    main .content p {
+      font-size: 10pt; }
+    main .content div > p, main .content div > h5 {
+      margin-left: 5mm; }
+    main .content div table {
+      width: 100%; }
+      main .content div table tr > td:nth-child(1) {
+        text-align: right;
+        padding-right: 5mm;
+        vertical-align: top; }
+      main .content div table tr > td:nth-child(2) {
+        width: 100mm; }
+
+footer {
+  flex-shrink: 0;
+  height: 10mm; }
