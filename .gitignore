@@ -1,2 +1,13 @@
 .sass-cache
+
+# Hide resources
 *.pdf
+*.svg
+*.png
+*.jpeg
+*.jpg
+
+# Hide some files
+style.*.*ss
+data.*.js
+index.*.html
