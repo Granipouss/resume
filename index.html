@@ -63,7 +63,7 @@
         </div>
 
         <div class="dotted-line">
-          <img v-for="i in 300" src="dot.svg">
+          <img v-for="i in 300" src="assets/dot.svg">
         </div>
 
         <div class="content">
@@ -78,12 +78,12 @@
                 </td>
               </tr>
             </table>
-            <template v-else>
-              <template v-for="item in part.list">
+            <div class="columns" v-else>
+              <div v-for="item in part.list">
                 <h5>{{ item.label }}</h5>
                 <p v-html="item.text"></p>
-              </template>
-            </template>
+              </div>
+            </div>
           </div>
         </div>
       </main>

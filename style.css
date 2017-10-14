@@ -1,3 +1,36 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@font-face {
+  font-family: 'Champagne & Limousines';
+  src: url("assets/Champagne Limousines.ttf"); }
+@font-face {
+  font-family: 'Champagne & Limousines';
+  font-weight: bold;
+  src: url("assets/Champagne Limousines Bold.ttf"); }
+@font-face {
+  font-family: 'Champagne & Limousines';
+  font-weight: bold;
+  font-style: italic;
+  src: url("assets/Champagne Limousines Bold Italic.ttf"); }
+@font-face {
+  font-family: 'Champagne & Limousines';
+  font-style: italic;
+  src: url("assets/Champagne Limousines Italic.ttf"); }
+@font-face {
+  font-family: 'Century Gothic';
+  src: url("assets/GOTHIC.ttf"); }
+@font-face {
+  font-family: 'Century Gothic';
+  font-weight: bold;
+  src: url("assets/GOTHICB.ttf"); }
+@font-face {
+  font-family: 'Century Gothic';
+  font-style: italic;
+  src: url("assets/GOTHICI.ttf"); }
+@font-face {
+  font-family: 'Century Gothic';
+  font-weight: bold;
+  font-style: italic;
+  src: url("assets/GOTHICBI.ttf"); }
 .text, .title, h3, h4, .subtitle, h5, main .content div table tr > td:nth-child(1), h6, p, #resume {
   font-family: "Champagne & Limousines";
   color: #595959;
@@ -12,7 +45,7 @@
   border-bottom: 1pt solid #BF0426; }
 
 h3 {
-  font-size: 14pt; }
+  font-size: 13pt; }
 
 .subtitle, h5, main .content div table tr > td:nth-child(1), h6 {
   color: #262626;
@@ -33,19 +66,17 @@ header {
   height: 35mm;
   display: flex;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  text-align: center; }
   header h1, header h2 {
-    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
     margin: 0; }
   header h1 {
     font-family: "Century Gothic";
-    text-transform: uppercase;
-    font-weight: bold;
     font-size: 32pt; }
   header h2 {
-    text-transform: uppercase;
     letter-spacing: 5pt;
-    font-weight: bold;
     font-size: 14pt; }
 
 main {
@@ -77,7 +108,7 @@ main {
     flex-direction: column;
     justify-content: space-between; }
     main .content p {
-      font-size: 10pt; }
+      font-size: 9.5pt; }
     main .content div > p, main .content div > h5 {
       margin-left: 5mm; }
     main .content div table {
@@ -88,6 +119,11 @@ main {
         vertical-align: top; }
       main .content div table tr > td:nth-child(2) {
         width: 100mm; }
+  main .columns {
+    display: flex;
+    flex-wrap: wrap; }
+    main .columns > div {
+      width: 50%; }
 
 footer {
   flex-shrink: 0;
