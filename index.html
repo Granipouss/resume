@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Resume</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.min.css">
     <script src="https://unpkg.com/vue"></script>
   </head>
 
@@ -73,7 +73,7 @@
               <tr v-for="item in part.list">
                 <td>{{ item.date }}</td>
                 <td>
-                  <h5>{{ item.label }}</h5>
+                  <h5 v-html="item.label"></h5>
                   <p v-html="item.text"></p>
                 </td>
               </tr>

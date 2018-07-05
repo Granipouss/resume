@@ -1,13 +1,13 @@
 // ===============================
 //  ~ Colors
 // ===============================
-$white: #F2F2F2;
+$white: #FFFFFF; // #F2F2F2;
 $dark-red: #730217;
 $light-red: #BF0426;
 $dark-gray: #262626;
 $light-gray: #595959;
 
-// @import "style.bw";
+@import "style.bw";
 
 // ===============================
 //  ~ Fonts
@@ -187,6 +187,13 @@ main {
         }
       }
     }
+
+    ul {
+      margin: 0;
+      padding-left: 15pt;
+      list-style-type: circle;
+    }
+
   }
 
   .columns {
