@@ -5,9 +5,9 @@ const data = {
     info: {
       title: 'Contacts',
       list: [
-        { label: 'Adresse', text: '139, Rue La Fayette<br>75010 Paris<br>FRANCE' },
+        { label: 'Adresse', text: '27 rue de Saintonge<br>75003 Paris<br>FRANCE' },
         { label: 'Téléphone', text: '+33 6 76 28 23 08' },
-        { label: 'Email', text: 'daoud@ensta.fr' },
+        { label: 'Email', text: 'brendan.daoud@laposte.net' },
         { label: 'Github', text: '<small>github.com/Granipouss<br>github.com/brendaoud</small>' }
       ]
     },
@@ -30,24 +30,23 @@ const data = {
   main: [
     {
       isTable: true,
-      title: 'Scolarité',
-      list: [{
-        date: 'Depuis 2014',
-        label: 'ENSTA ParisTech',
-        text: 'École d’ingénieur<br>Voie Signal, Informatique et Systèmes & Parcours Architecture et Sécurité des Systèmes d’Information - Profils Entrepreneuriat et Intrapreneuriat'
-      }, {
-        date: '2012 - 2014',
-        label: 'Classe Préparatoire',
-        text: 'Lycée Charlemagne, Paris<br>Classe préparatoire mathématiques, physique et informatique'
-      }, {
-        date: '2012',
-        label: 'Baccalauréat S',
-        text: 'Lycée Victor Hugo, Paris'
-      }]
-    }, {
-      isTable: true,
       title: 'Expériences Professionelles',
       list: [{
+        date: 'Depuis 2018',
+        label: 'Ingénieur Logiciel à Theodo',
+        text: `
+            <ul>
+              <li>
+                Participation au développement d'applications utilisées par Coca Cola
+                pour la couverture de l'UEFA en France et en Belgique.
+                <small>(Video du projet https://vimeo.com/270059933)</small>
+              </li>
+              <li>
+                Développement d'une exposition interactive pour l'anniversaire de Tiffany
+                & Co en Chine.
+              </li>
+            </ul>`
+      }, {
         date: 'Avril - Sept. 2018',
         label: 'Stage de fin d\'étude en cours chez CardMarket à Berlin',
         text: `Leader européen de la vente de cartes à jouer et à collectionner.<br>
@@ -68,15 +67,20 @@ const data = {
         label: 'Stage de développeur chez Soixante circuits',
         text: `Agence parisienne de design interactif
             <ul>
-              <li>Participation au développement d'applications utilisées par Coca Cola
-                pour la couverture de l'UEFA en France et en Belgique.</li>
-              <li>Développement d'une exposition interactive pour l'anniversaire de Tiffany
-                & Co en Chine. </li>
+              <li>
+                Participation au développement d'applications utilisées par Coca Cola
+                pour la couverture de l'UEFA en France et en Belgique.
+                <small>(Video du projet https://vimeo.com/270059933)</small>
+              </li>
+              <li>
+                Développement d'une exposition interactive pour l'anniversaire de Tiffany
+                & Co en Chine.
+              </li>
             </ul>
             <small>Utilisation de Node JS, notamment les librairies Vue.js et Webpack</small>`
       }, {
         date: '2015 - 2017',
-        label: 'Site de MLVA pour \'Université Paris Sud',
+        label: 'Site de MLVA pour l\'Université Paris Sud',
         text: `Remise à neuf d'un site participatif de séquençage du génomes de
               microbes utilisé par des biologistes à travers le monde. Développement
               sur 3 ans avec un camarade de l'ENSTA, en relation constante avec
@@ -93,34 +97,50 @@ const data = {
       //   text: 'Assitant au secrétariat du servcie de contrôle des Assurances et Mutuelles'
       }]
     }, {
-      isTable: false,
-      title: 'Vie associative',
+      isTable: true,
+      title: 'Scolarité',
       list: [{
-        label: 'Bureau des Arts',
-        text: `Association étudiante gérant l\'ensemble des activités culturelles
-              et artistiques du campus.<br>
-              Création et gestion du site de billetterie en ligne.`
-      }, {
-        label: 'l\'Anim\'',
-        text: `Organisation de repas pour environ 200 personnes. Gestion de l'équipe (15 à 20 personnes) -
-              Planification du travail en amont et répartition des tâches lors de l'évènement.`
+        date: '2014 - 2018',
+        label: 'ENSTA ParisTech',
+        text: 'École d’ingénieur<br>Voie Signal, Informatique et Systèmes & Parcours Architecture et Sécurité des Systèmes d’Information - Profils Entrepreneuriat et Intrapreneuriat'
+      // }, {
+      //   date: '2012 - 2014',
+      //   label: 'Classe Préparatoire',
+      //   text: 'Lycée Charlemagne, Paris<br>Classe préparatoire mathématiques, physique et informatique'
+      // }, {
+      //   date: '2012',
+      //   label: 'Baccalauréat S',
+      //   text: 'Lycée Victor Hugo, Paris'
       }]
-    }, {
-      isTable: false,
-      title: 'Hobbies',
-      list: [{
-        label: 'Arts Visuels',
-        text: 'Dessin et peinture, visites de musées et d\'expositions, film et séries d\'animations'
-      }, {
-        label: 'Informatique',
-        text: 'Sites web et jeux amateurs, projets divers'
-      }, {
-        label: 'Sport',
-        text: 'Gymnastique, Natation'
-      }, {
-        label: 'Cuisine',
-        text: 'Pâtisserie principalement'
-      }]
+    // }, {
+    //   isTable: false,
+    //   title: 'Vie associative',
+    //   list: [{
+    //     label: 'Bureau des Arts',
+    //     text: `Association étudiante gérant l\'ensemble des activités culturelles
+    //           et artistiques du campus.<br>
+    //           Création et gestion du site de billetterie en ligne.`
+    //   }, {
+    //     label: 'l\'Anim\'',
+    //     text: `Organisation de repas pour environ 200 personnes. Gestion de l'équipe (15 à 20 personnes) -
+    //           Planification du travail en amont et répartition des tâches lors de l'évènement.`
+    //   }]
+    // }, {
+    //   isTable: false,
+    //   title: 'Hobbies',
+    //   list: [{
+    //     label: 'Arts Visuels',
+    //     text: 'Dessin et peinture, visites de musées et d\'expositions, film et séries d\'animations'
+    //   }, {
+    //     label: 'Informatique',
+    //     text: 'Sites web et jeux amateurs, projets divers'
+    //   }, {
+    //     label: 'Sport',
+    //     text: 'Gymnastique, Natation'
+    //   }, {
+    //     label: 'Cuisine',
+    //     text: 'Pâtisserie principalement'
+    //   }]
     }
   ]
 }

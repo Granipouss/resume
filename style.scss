@@ -1,72 +1,31 @@
 // ===============================
 //  ~ Colors
 // ===============================
-$white: #FFFFFF; // #F2F2F2;
+$white: #ffffff; // #F2F2F2;
 $dark-red: #730217;
-$light-red: #BF0426;
+$light-red: #bf0426;
 $dark-gray: #262626;
 $light-gray: #595959;
-
-@import "style.bw";
 
 // ===============================
 //  ~ Fonts
 // ===============================
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-
-@font-face {
-  font-family: 'Champagne & Limousines';
-  src: url('assets/Champagne Limousines.ttf');
-}
-@font-face {
-  font-family: 'Champagne & Limousines';
-  font-weight: bold;
-  src: url('assets/Champagne Limousines Bold.ttf');
-}
-@font-face {
-  font-family: 'Champagne & Limousines';
-  font-weight: bold;
-  font-style: italic;
-  src: url('assets/Champagne Limousines Bold Italic.ttf');
-}
-@font-face {
-  font-family: 'Champagne & Limousines';
-  font-style: italic;
-  src: url('assets/Champagne Limousines Italic.ttf');
-}
-
-@font-face {
-  font-family: 'Century Gothic';
-  src: url('assets/GOTHIC.ttf');
-}
-@font-face {
-  font-family: 'Century Gothic';
-  font-weight: bold;
-  src: url('assets/GOTHICB.ttf');
-}
-@font-face {
-  font-family: 'Century Gothic';
-  font-style: italic;
-  src: url('assets/GOTHICI.ttf');
-}
-@font-face {
-  font-family: 'Century Gothic';
-  font-weight: bold;
-  font-style: italic;
-  src: url('assets/GOTHICBI.ttf');
-}
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Hammersmith+One|Quicksand&display=swap");
 
 // ===============================
 //  ~ Typography
 // ===============================
 .text {
-  font-family: "Champagne & Limousines";
+  font-family: "Quicksand";
   color: $light-gray;
-  font-size: 11pt;
+  font-size: 10pt;
   margin: 0;
 }
 
-.title, h3, h4 {
+.title,
+h3,
+h4 {
   @extend .text;
   color: $dark-red;
   margin-bottom: 4pt;
@@ -75,9 +34,13 @@ $light-gray: #595959;
   border-bottom: 1pt solid $light-red;
 }
 
-h3 { font-size: 13pt; }
+h3 {
+  font-size: 13pt;
+}
 
-.subtitle, h5, h6 {
+.subtitle,
+h5,
+h6 {
   @extend .text;
   color: $dark-gray;
   font-weight: bold;
@@ -92,35 +55,40 @@ p {
 //  ~ Layout
 // ===============================
 #resume {
-  background: $dark-gray;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-areas:
+    "header header header header header header header"
+    ". . . . . . ."
+    ". sidebar . separator . main ."
+    ". . . . . . ."
+    "footer footer footer footer footer footer footer";
+  grid-template-rows: 35mm 10mm auto 10mm 10mm;
+  grid-template-columns: 10mm 2fr 7.5mm 0 7.5mm 7fr 10mm;
 
   @extend .text;
 }
 
 // = HEADER ===
 header {
-  flex-shrink: 0;
+  grid-area: header;
+  background: $dark-gray;
 
   color: $white;
-  height: 35mm;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
 
-  h1, h2 {
+  h1,
+  h2 {
     text-transform: uppercase;
     font-weight: bold;
     margin: 0;
   }
 
   h1 {
-    font-family: "Century Gothic";
+    font-family: "Hammersmith One";
     font-size: 32pt;
   }
 
@@ -131,83 +99,77 @@ header {
 }
 
 // = MAIN ===
-main {
-  flex-grow: 1;
-  padding: 10mm;
+.sideboard {
+  grid-area: sidebar;
+
   display: flex;
-  background: $white;
+  text-align: right;
+  flex-direction: column;
 
-  .sideboard {
+  padding: 5mm 0;
+
+  div {
+    font-size: 13pt;
     flex: 1;
-    text-align: right;
-    padding: 5mm 0;
-    display: flex;
-    flex-direction: column;
+    &.bottom {
+      font-size: 11pt;
+      margin-top: 5mm;
+      flex: 0;
+    }
+  }
+}
 
-    div {
-      font-size: 13pt;
-      flex: 1;
-      &.bottom {
-        font-size: 11pt;
-        margin-top: 5mm;
-        flex: 0;
+.dotted-line {
+  grid-area: separator;
+  border-right: 1pt solid $dark-red;
+}
+
+.content {
+  grid-area: main;
+  overflow: hidden;
+  // display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  div {
+    & > p,
+    & > h5 {
+      margin-left: 5mm;
+    }
+
+    table {
+      width: 100%;
+      tr > td:nth-child(1) {
+        text-align: right;
+        padding-right: 5mm;
+        vertical-align: top;
+        width: 22mm;
+        @extend h5;
+      }
+      tr > td:nth-child(2) {
+        width: 100mm;
       }
     }
   }
 
-  .dotted-line {
-    // height: 100%;
-    width: 2pt;
-    margin: 0 10mm 0 7.5mm;
-    line-height: 0;
-    overflow: hidden;
+  ul {
+    margin: 0;
+    padding-left: 15pt;
+    list-style-type: circle;
   }
+}
 
-  .content {
-    width: 135mm;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.columns {
+  display: flex;
+  flex-wrap: wrap;
 
-    p { font-size: 9.5pt; }
-
-    div {
-      & > p, & > h5 { margin-left: 5mm; }
-
-      table {
-        width: 100%;
-        tr > td:nth-child(1) {
-          text-align: right;
-          padding-right: 5mm;
-          vertical-align: top;
-          @extend h5;
-        }
-        tr > td:nth-child(2) {
-          width: 100mm;
-        }
-      }
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 15pt;
-      list-style-type: circle;
-    }
-
-  }
-
-  .columns {
-    display: flex;
-    flex-wrap: wrap;
-
-    & > div {
-      width: 50%;
-    }
+  & > div {
+    width: 50%;
   }
 }
 
 // = FOOTER ===
 footer {
-  flex-shrink: 0;
-  height: 10mm;
+  grid-area: footer;
+  background: $dark-gray;
 }

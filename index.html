@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Resume</title>
-    <link rel="stylesheet" href="style.min.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/vue"></script>
   </head>
 
@@ -11,9 +11,12 @@
     body {
       background: grey;
       position: absolute;
-      top: 0; bottom: 0;
-      right: 0; left: 0;
-      margin: 0; padding: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
     }
 
     body > * {
@@ -25,7 +28,7 @@
       height: 297mm;
       margin: 5mm auto;
       box-sizing: border-box;
-      box-shadow: 0 3mm 3mm rgba(0,0,0,0.5);
+      box-shadow: 0 3mm 3mm rgba(0, 0, 0, 0.5);
     }
   </style>
 
@@ -43,50 +46,47 @@
         <h2>{{ subtitle }}</h2>
       </header>
 
-      <main>
-        <div class="sideboard">
-          <div>
-            <h4>{{ side.info.title }}</h4>
-            <template v-for="item in side.info.list">
-              <h6>{{ item.label }}</h6>
-              <p v-html="item.text"></p>
-            </template>
-          </div>
-
-          <div v-for="skillset in side.skills" class="bottom">
-            <h4>{{ skillset.title }}</h4>
-            <template v-for="skill in skillset.list">
-              <h6>{{ skill.label }}</h6>
-              <p v-html="skill.text"></p>
-            </template>
-          </div>
+      <div class="sideboard">
+        <div>
+          <h4>{{ side.info.title }}</h4>
+          <template v-for="item in side.info.list">
+            <h6>{{ item.label }}</h6>
+            <p v-html="item.text"></p>
+          </template>
         </div>
 
-        <div class="dotted-line">
-          <img v-for="i in 300" src="assets/dot.svg">
+        <div v-for="skillset in side.skills" class="bottom">
+          <h4>{{ skillset.title }}</h4>
+          <template v-for="skill in skillset.list">
+            <h6>{{ skill.label }}</h6>
+            <p v-html="skill.text"></p>
+          </template>
         </div>
+      </div>
 
-        <div class="content">
-          <div v-for="part in main">
-            <h3>{{ part.title }}</h3>
-            <table v-if="part.isTable">
-              <tr v-for="item in part.list">
-                <td>{{ item.date }}</td>
-                <td>
-                  <h5 v-html="item.label"></h5>
-                  <p v-html="item.text"></p>
-                </td>
-              </tr>
-            </table>
-            <div class="columns" v-else>
-              <div v-for="item in part.list">
-                <h5>{{ item.label }}</h5>
+      <div class="dotted-line"></div>
+
+      <div class="content">
+        <div v-for="part in main">
+          <h3>{{ part.title }}</h3>
+          <table v-if="part.isTable">
+            <tr v-for="item in part.list">
+              <td>{{ item.date }}</td>
+              <td>
+                <h5 v-html="item.label"></h5>
                 <p v-html="item.text"></p>
-              </div>
+              </td>
+            </tr>
+          </table>
+
+          <div class="columns" v-else>
+            <div v-for="item in part.list">
+              <h5>{{ item.label }}</h5>
+              <p v-html="item.text"></p>
             </div>
           </div>
         </div>
-      </main>
+      </div>
 
       <footer></footer>
     </div>
@@ -94,7 +94,6 @@
 
   <script src="data.js" charset="utf-8"></script>
   <script type="text/javascript">
-    new Vue({ el: '#resume', data })
+    new Vue({ el: "#resume", data });
   </script>
-
 </html>

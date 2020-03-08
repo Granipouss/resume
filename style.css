@@ -1,53 +1,32 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-@font-face {
-  font-family: 'Champagne & Limousines';
-  src: url("assets/Champagne Limousines.ttf"); }
-@font-face {
-  font-family: 'Champagne & Limousines';
-  font-weight: bold;
-  src: url("assets/Champagne Limousines Bold.ttf"); }
-@font-face {
-  font-family: 'Champagne & Limousines';
-  font-weight: bold;
-  font-style: italic;
-  src: url("assets/Champagne Limousines Bold Italic.ttf"); }
-@font-face {
-  font-family: 'Champagne & Limousines';
-  font-style: italic;
-  src: url("assets/Champagne Limousines Italic.ttf"); }
-@font-face {
-  font-family: 'Century Gothic';
-  src: url("assets/GOTHIC.ttf"); }
-@font-face {
-  font-family: 'Century Gothic';
-  font-weight: bold;
-  src: url("assets/GOTHICB.ttf"); }
-@font-face {
-  font-family: 'Century Gothic';
-  font-style: italic;
-  src: url("assets/GOTHICI.ttf"); }
-@font-face {
-  font-family: 'Century Gothic';
-  font-weight: bold;
-  font-style: italic;
-  src: url("assets/GOTHICBI.ttf"); }
-.text, .title, h3, h4, .subtitle, h5, main .content div table tr > td:nth-child(1), h6, p, #resume {
-  font-family: "Champagne & Limousines";
+@import url("https://fonts.googleapis.com/css?family=Hammersmith+One|Quicksand&display=swap");
+.text, .title,
+h3,
+h4, .subtitle,
+h5,
+.content div table tr > td:nth-child(1),
+h6, p, #resume {
+  font-family: "Quicksand";
   color: #595959;
-  font-size: 11pt;
+  font-size: 10pt;
   margin: 0; }
 
-.title, h3, h4 {
+.title,
+h3,
+h4 {
   color: #730217;
   margin-bottom: 4pt;
   display: inline-block;
   text-transform: uppercase;
-  border-bottom: 1pt solid #BF0426; }
+  border-bottom: 1pt solid #bf0426; }
 
 h3 {
   font-size: 13pt; }
 
-.subtitle, h5, main .content div table tr > td:nth-child(1), h6 {
+.subtitle,
+h5,
+.content div table tr > td:nth-child(1),
+h6 {
   color: #262626;
   font-weight: bold; }
 
@@ -55,76 +34,76 @@ p {
   margin-bottom: 4pt; }
 
 #resume {
-  background: #262626;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
+  display: grid;
+  grid-template-areas: "header header header header header header header" ". . . . . . ." ". sidebar . separator . main ." ". . . . . . ." "footer footer footer footer footer footer footer";
+  grid-template-rows: 35mm 10mm auto 10mm 10mm;
+  grid-template-columns: 10mm 2fr 7.5mm 0 7.5mm 7fr 10mm; }
 
 header {
-  flex-shrink: 0;
-  color: #F2F2F2;
-  height: 35mm;
+  grid-area: header;
+  background: #262626;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center; }
-  header h1, header h2 {
+  header h1,
+  header h2 {
     text-transform: uppercase;
     font-weight: bold;
     margin: 0; }
   header h1 {
-    font-family: "Century Gothic";
+    font-family: "Hammersmith One";
     font-size: 32pt; }
   header h2 {
     letter-spacing: 5pt;
     font-size: 14pt; }
 
-main {
-  flex-grow: 1;
-  padding: 10mm;
+.sideboard {
+  grid-area: sidebar;
   display: flex;
-  background: #F2F2F2; }
-  main .sideboard {
-    flex: 1;
-    text-align: right;
-    padding: 5mm 0;
-    display: flex;
-    flex-direction: column; }
-    main .sideboard div {
-      font-size: 13pt;
-      flex: 1; }
-      main .sideboard div.bottom {
-        font-size: 11pt;
-        margin-top: 5mm;
-        flex: 0; }
-  main .dotted-line {
-    width: 2pt;
-    margin: 0 10mm 0 7.5mm;
-    line-height: 0;
-    overflow: hidden; }
-  main .content {
-    width: 135mm;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; }
-    main .content p {
-      font-size: 9.5pt; }
-    main .content div > p, main .content div > h5 {
-      margin-left: 5mm; }
-    main .content div table {
-      width: 100%; }
-      main .content div table tr > td:nth-child(1) {
-        text-align: right;
-        padding-right: 5mm;
-        vertical-align: top; }
-      main .content div table tr > td:nth-child(2) {
-        width: 100mm; }
-  main .columns {
-    display: flex;
-    flex-wrap: wrap; }
-    main .columns > div {
-      width: 50%; }
+  text-align: right;
+  flex-direction: column;
+  padding: 5mm 0; }
+  .sideboard div {
+    font-size: 13pt;
+    flex: 1; }
+    .sideboard div.bottom {
+      font-size: 11pt;
+      margin-top: 5mm;
+      flex: 0; }
+
+.dotted-line {
+  grid-area: separator;
+  border-right: 1pt solid #730217; }
+
+.content {
+  grid-area: main;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-between; }
+  .content div > p, .content div > h5 {
+    margin-left: 5mm; }
+  .content div table {
+    width: 100%; }
+    .content div table tr > td:nth-child(1) {
+      text-align: right;
+      padding-right: 5mm;
+      vertical-align: top;
+      width: 22mm; }
+    .content div table tr > td:nth-child(2) {
+      width: 100mm; }
+  .content ul {
+    margin: 0;
+    padding-left: 15pt;
+    list-style-type: circle; }
+
+.columns {
+  display: flex;
+  flex-wrap: wrap; }
+  .columns > div {
+    width: 50%; }
 
 footer {
-  flex-shrink: 0;
-  height: 10mm; }
+  grid-area: footer;
+  background: #262626; }
